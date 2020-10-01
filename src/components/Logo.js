@@ -1,30 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const LogoStyled = styled.h1`
+import logo from "assets/img/header/logo.jpg";
+
+const LogoStyled = styled.img`
   color: #fff;
-  font-size: 25px;
+  width: 90px;
   margin: 0;
   font-family: "Roboto-Bold";
   position: relative;
-  &::before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    top: -3px;
-    left: 0;
-  }
-  &::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;
@@ -32,5 +16,5 @@ const LogoStyled = styled.h1`
 `;
 
 export default function Logo() {
-  return <LogoStyled>DCProject</LogoStyled>;
+  return <LogoStyled src={logo} alt="logo" />;
 }
