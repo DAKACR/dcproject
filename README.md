@@ -4,4 +4,3 @@
 
 - React
 - Styled-components
-- Google docs API (cms)
