@@ -8,6 +8,7 @@ const LogoStyled = styled.h1`
   font-family: "Roboto-Bold";
   position: relative;
   text-decoration: underline;
+  font-size: 1.6rem;
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;
