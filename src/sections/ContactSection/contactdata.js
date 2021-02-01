@@ -10,7 +10,7 @@ const SHARED_CONTACT_DATA = [
     important: true,
   },
   {
-    text: "dbcaceresr@icloud.com",
+    text: "contact@dcproject.xyz",
     icon: "mail-bulk",
     important: true,
   },
