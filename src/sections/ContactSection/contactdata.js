@@ -1,6 +1,6 @@
 const SHARED_CONTACT_DATA = [
   {
-    text: "Santiago, Metropolitano de Santiago, Chile",
+    text: "Santiago, Región Metropolitana, Chile",
     icon: "map",
     important: false,
   },
@@ -55,7 +55,7 @@ const SHARED_FORM_INFO = [
     name: "file",
     min: "0",
     max: "0",
-    accept: ".pdf, .dwg, .dxf, .shp, .tiff, .kmz, .doc",
+    accept: ".pdf, .dwg, .dxf, .shp, .tiff, .kmz, .jpg, .doc",
     required: true,
   },
   {
@@ -89,7 +89,7 @@ export const FORM_INFO = {
     {
       ...SHARED_FORM_INFO[0],
       label: "¿En que podemos ayudarle?",
-      placeholder: "Escribanos su mensaje",
+      placeholder: "Escríbanos su mensaje",
     },
     {
       ...SHARED_FORM_INFO[1],
