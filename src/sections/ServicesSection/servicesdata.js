@@ -31,7 +31,7 @@ const SERVICES_DATA = {
     },
     {
       img: costos,
-      title: "COSTOS Y PLANIFICACIÓN OBRAS CIVILES",
+      title: "Costos y Planificación de Obras Civiles",
       description:
         "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
     },
@@ -62,7 +62,7 @@ const SERVICES_DATA = {
     },
     {
       img: costos,
-      title: "COSTOS Y PLANIFICACIÓN OBRAS CIVILES",
+      title: "Costos y Planificación de Obras Civiles",
       description:
         "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
     },
