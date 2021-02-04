@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const LogoStyled = styled.h1`
-  color: #fff;
+import logo from 'assets/img/header/default.svg'
+
+const LogoStyled = styled.img`
   margin: 0;
-  font-family: "Roboto-Bold";
-  position: relative;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  font-size: 1.6rem;
+  width: 90px;
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;
@@ -16,5 +13,5 @@ const LogoStyled = styled.h1`
 `;
 
 export default function Logo({ children }) {
-  return <LogoStyled>{children}</LogoStyled>;
+  return <LogoStyled src={logo} alt="logo" />;
 }
