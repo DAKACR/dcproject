@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from 'assets/img/header/default.svg'
+import logo from 'assets/img/header/logo.jpeg'
 
 const LogoStyled = styled.img`
   margin: 0;

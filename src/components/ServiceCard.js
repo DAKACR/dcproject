@@ -10,7 +10,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-  margin-left: 1rem;
   position: relative;
   border-radius: 7px;
   overflow: hidden;
@@ -18,10 +17,6 @@ const Container = styled.div`
   cursor: pointer;
   &:hover {
     box-shadow: 0px 33px 33px -16px #00000021;
-    transform: translateY(-7px);
-  }
-  &:first-of-type {
-    margin-left: 0;
   }
   @media (max-width: 640px) {
     height: 280px;

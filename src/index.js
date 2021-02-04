@@ -7,11 +7,15 @@ import "assets/css/fonts.css";
 
 import * as serviceWorker from "./serviceWorker";
 
+const UNDERCONSTRUCTION = () => (
+  <div style={{ width: '100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <h1 style={{ fontSize: '3rem', fontWeight: '900' }}>SITE UNDER CONSTRUCTION.</h1>
+  </div>
+)
+
 ReactDOM.render(
   <React.StrictMode>
-    <div style={{ width: '100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <h1 style={{ fontSize: '3rem', fontWeight: '900' }}>SITE UNDER CONSTRUCTION.</h1>
-    </div>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

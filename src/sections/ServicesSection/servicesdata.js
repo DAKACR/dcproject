@@ -2,6 +2,7 @@ import dibujos from "assets/img/services_img/dibujos.jpg";
 import digitalizacion from "assets/img/services_img/digitalizacion.jpg";
 import generacion from "assets/img/services_img/generacion.webp";
 import geomatica from "assets/img/services_img/geomatica.jpg";
+import costos from "assets/img/services_img/costos.jpeg";
 
 const SERVICES_DATA = {
   es: [
@@ -28,6 +29,12 @@ const SERVICES_DATA = {
       description:
         "Generamos mapas usando programas como ArcGIS, Global Mapper, QGIS.",
     },
+    {
+      img: costos,
+      title: "COSTOS Y PLANIFICACIÓN OBRAS CIVILES",
+      description:
+        "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
+    },
   ],
   en: [
     {
@@ -52,6 +59,12 @@ const SERVICES_DATA = {
       title: "Geomatic (SIG)",
       description:
         "We create maps using apps of SIG: ArcGIS, Global Mapper, Qgis, and more tools. All in spatial data.",
+    },
+    {
+      img: costos,
+      title: "COSTOS Y PLANIFICACIÓN OBRAS CIVILES",
+      description:
+        "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
     },
   ],
 };
