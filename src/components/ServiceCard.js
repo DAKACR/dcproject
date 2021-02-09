@@ -15,11 +15,18 @@ const Container = styled.div`
   overflow: hidden;
   transition: 0.5s all;
   cursor: pointer;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  &:first-of-type {
+    margin-left: 0;
+  }
   &:hover {
     box-shadow: 0px 33px 33px -16px #00000021;
   }
   @media (max-width: 640px) {
     height: 280px;
+    margin-left: 0;
+    margin-top: 1rem;
   }
 `;
 const Img = styled.img`

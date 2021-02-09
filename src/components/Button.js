@@ -15,8 +15,9 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   &:hover {
     cursor: pointer;
-    transform: translateY(7px);
-    filter: brightness(0.9);
+    transform: translateY(-7px);
+    box-shadow: 0px 3px 20px 7px #0a93ff;
+    font-weight: 900;
   }
 
   ${({ section }) => {
@@ -27,7 +28,7 @@ const StyledButton = styled.button`
           margin: 2rem auto 0 auto;
           &:hover {
             transform: none;
-            filter: brightness(0.9);
+            box-shadow: 0px 0px 0px 3px #0a93ffa1;
           }
         `;
 

@@ -17,6 +17,7 @@ const StyledButtonLink = styled.a`
   @media (max-width: 1024px) {
     margin-left: 0;
     margin-right: 1rem;
+    transform: scale(0.8);
   }
 `;
 

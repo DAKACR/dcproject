@@ -43,6 +43,7 @@ const StyledLinkList = styled.ul`
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 100;
             & > li {
               width: 80%;
               margin-left: 0;

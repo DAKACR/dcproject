@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { LanguageContext } from "context/languagecontext";
 import { ExpandedGalleryImgContext } from "context/expandedgalleryimgcontext";
@@ -16,8 +16,20 @@ const BODY = document.querySelector("body");
 
 export default function HeaderSection() {
   const [showMenu, setShowMenu] = useState(false);
+  const [mediaMatch, setMediaMatch] = useState({
+    mobile: window.matchMedia("(max-width: 1024px)").matches,
+    pc: window.matchMedia("(min-width: 1025px)").matches
+  });
   const { lang, setLang } = useContext(LanguageContext);
   const { setExpandedGalleryImg } = useContext(ExpandedGalleryImgContext);
+
+
+  useEffect(() => {
+    setMediaMatch({
+      mobile: window.matchMedia("(max-width: 1024px)").matches,
+      pc: window.matchMedia("(min-width: 1025px)").matches
+    })
+  }, [showMenu])
 
   const handleMenu = (show) => {
     if (show) {
@@ -28,13 +40,14 @@ export default function HeaderSection() {
     }
     setShowMenu(show);
   };
+
   return (
     <Layout section="header">
       <Logo>DCproject</Logo>
       <RightSideContainer>
         <BurguerMenu handleMenu={handleMenu} />
-        {(showMenu && window.matchMedia("(max-width: 1024px)")).matches ||
-        window.matchMedia("(min-width: 1025px)").matches ? (
+        {(showMenu && mediaMatch.mobile) ||
+        mediaMatch.pc ? (
           <LinkList section="header" handleMenu={handleMenu} />
         ) : null}
         <ContactButton />
