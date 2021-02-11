@@ -1,4 +1,5 @@
 import how_we_work from "assets/img/about_us/how_we_work.jpg";
+import how_we_work from "assets/img/about_us/EN_HOW_WE_WORK.jpg";
 
 const ABOUT_US_DATA = {
   es: [
