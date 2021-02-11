@@ -30,7 +30,7 @@ const ABOUT_US_DATA = {
     },
     {
       title: "Our work process",
-      img: how_we_work,
+      img: EN_HOW_WE_WORK,
     },
     {
       title: "Our goal",
