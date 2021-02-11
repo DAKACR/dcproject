@@ -66,6 +66,12 @@ const SERVICES_DATA = {
       description:
         "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
     },
+    {
+      img: costos,
+      title: "Costs & Planning of Civil Works",
+      description:
+       "Cost estimate Analysis of unitary prices, Works´ budgets, Control of work quantities, Consultant ( advisory in general)",
+    },
   ],
 };
 
