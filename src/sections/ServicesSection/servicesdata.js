@@ -59,13 +59,7 @@ const SERVICES_DATA = {
       title: "Geomatic (SIG)",
       description:
         "We create maps using apps of SIG: ArcGIS, Global Mapper, Qgis, and more tools. All in spatial data.",
-    },
-    {
-      img: costos,
-      title: "Costos y Planificación de Obras Civiles",
-      description:
-        "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
-    },
+    },     
     {
       img: costos,
       title: "Costs & Planning of Civil Works",
