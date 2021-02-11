@@ -1,5 +1,5 @@
 import how_we_work from "assets/img/about_us/how_we_work.jpg";
-import how_we_work from "assets/img/about_us/EN_HOW_WE_WORK.jpg";
+import how_we_work from "assets/img/about_us/en_how_we_work.jpg";
 
 const ABOUT_US_DATA = {
   es: [
@@ -31,7 +31,7 @@ const ABOUT_US_DATA = {
     },
     {
       title: "Our work process",
-      img: EN_HOW_WE_WORK,
+      img: en_how_we_work,
     },
     {
       title: "Our goal",
