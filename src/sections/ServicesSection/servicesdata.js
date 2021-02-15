@@ -1,36 +1,40 @@
-import dibujos from "assets/img/services_img/dibujos.jpg";
-import digitalizacion from "assets/img/services_img/digitalizacion.jpg";
-import generacion from "assets/img/services_img/generacion.webp";
-import geomatica from "assets/img/services_img/geomatica.jpg";
-import costos from "assets/img/services_img/costos.jpeg";
+const SHARE_ID = 'v1613404557/dcproject/services_img/'
+
+const IMG_PUBLIC_IDS = {
+  draws: SHARE_ID + 'dibujos_n5utua',
+  digitalization: SHARE_ID + 'digitalizacion_qovbil',
+  generation: SHARE_ID + 'generacion_u0dncl',
+  geomatic: SHARE_ID + 'geomatica_uimo3p',
+  costs: SHARE_ID + 'costos_r2o59h'
+}
 
 const SERVICES_DATA = {
   es: [
     {
-      img: dibujos,
+      img: IMG_PUBLIC_IDS.draws,
       title: "Dibujos 2D, 3D",
       description:
         "Utilizamos como herramientas software Autodesk, especificamente AutoCAD, Civil3D.",
     },
     {
-      img: digitalizacion,
+      img: IMG_PUBLIC_IDS.digitalization,
       title: "Digitalización de Planos",
       description: "Se transfiere de papel a digital usando Autocad, Revit.",
     },
     {
-      img: generacion,
+      img: IMG_PUBLIC_IDS.generation,
       title: "Generación de Planos",
       description:
         "Elaboramos planos civiles, topográficos, eléctricos y de arquitectura.",
     },
     {
-      img: geomatica,
+      img: IMG_PUBLIC_IDS.geomatic,
       title: "Geomática",
       description:
         "Generamos mapas usando programas como ArcGIS, Global Mapper, QGIS.",
     },
     {
-      img: costos,
+      img: IMG_PUBLIC_IDS.costs,
       title: "Costos y Planificación de Obras Civiles",
       description:
         "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",
@@ -38,30 +42,30 @@ const SERVICES_DATA = {
   ],
   en: [
     {
-      img: dibujos,
+      img: IMG_PUBLIC_IDS.draws,
       title: "2D, 3D Drawings",
       description:
         "We use specialized tools of Autodesk's products, like AutoCAD, Civil 3D.",
     },
     {
-      img: digitalizacion,
+      img: IMG_PUBLIC_IDS.digitalization,
       title: "Digital Drawings",
       description: "We convert hand sketch to AutCAD and Revit formats.",
     },
     {
-      img: generacion,
+      img: IMG_PUBLIC_IDS.generation,
       title: "Producing Drawings",
       description:
         "We create and design electrical drawings, architectural and topographical drawings and more.",
     },
     {
-      img: geomatica,
+      img: IMG_PUBLIC_IDS.geomatic,
       title: "Geomatic (SIG)",
       description:
         "We create maps using apps of SIG: ArcGIS, Global Mapper, Qgis, and more tools. All in spatial data.",
     },
     {
-      img: costos,
+      img: IMG_PUBLIC_IDS.costs,
       title: "Costos y Planificación de Obras Civiles",
       description:
         "Estimaciones de costos  de una obra Análisis de precios unitarios (A.P.U) Modelos de Negocio Elaboración de presupuesto para obras Control de cantidades de obras Asesoría en general en contabilidad de costos",

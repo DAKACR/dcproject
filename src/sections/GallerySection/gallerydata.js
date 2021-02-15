@@ -1,9 +1,11 @@
-import trabajo1 from "assets/img/portafolio/trabajo1.jpg";
-import trabajo2 from "assets/img/portafolio/trabajo2.jpg";
-import trabajo3 from "assets/img/portafolio/trabajo3.jpg";
-import trabajo4 from "assets/img/portafolio/trabajo4.jpg";
-import trabajo5 from "assets/img/portafolio/trabajo5.jpg";
+const SHARE_ID = 'https://res.cloudinary.com/deudpvv78/image/upload/v1613404452/dcproject/portafolio/'
 
-const GALLERY_DATA = [trabajo1, trabajo2, trabajo3, trabajo4, trabajo5];
+const IMAGE1 = SHARE_ID + 'trabajo4_raimrs'
+const IMAGE2 = SHARE_ID + 'trabajo5_j7tybx'
+const IMAGE3 = SHARE_ID + 'trabajo2_xzvg9c'
+const IMAGE4 = SHARE_ID + 'trabajo1_rzbf0r'
+const IMAGE5 = SHARE_ID + 'trabajo3_xcpkgm'
+
+const GALLERY_DATA = [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5];
 
 export default GALLERY_DATA;

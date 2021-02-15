@@ -28,7 +28,7 @@ export default function AboutUsSection({ getRef }) {
             {paragraph ? (
               <AboutUsDataParagraph>{paragraph}</AboutUsDataParagraph>
             ) : (
-              <AboutUsImg src={img} />
+              <AboutUsImg publicId={img} />
             )}
           </AboutUsDataContainer>
         ))}

@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import React from 'react'
+import styled from "styled-components"
+
+import { Image, Transformation } from 'cloudinary-react'
 
 const AboutUsContainer = styled.div`
   width: 100%;
@@ -39,7 +42,7 @@ const AboutUsDataParagraph = styled.p`
   }
 `;
 
-const AboutUsImg = styled.img`
+const AboutUsImgStyled = styled(Image)`
   width: 500px;
   margin: 1rem auto 3rem auto;
   display: flex;
@@ -49,6 +52,12 @@ const AboutUsImg = styled.img`
     width: 100%;
   }
 `;
+
+const AboutUsImg = ({ publicId }) => (
+  <AboutUsImgStyled publicId={publicId} secure="true">
+    <Transformation width={500} crop="scale" />
+  </AboutUsImgStyled>
+)
 
 export {
   AboutUsContainer,

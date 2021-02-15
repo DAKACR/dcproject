@@ -43,7 +43,7 @@ export default function HeaderSection() {
 
   return (
     <Layout section="header">
-      <Logo>DCproject</Logo>
+      <Logo />
       <RightSideContainer>
         <BurguerMenu handleMenu={handleMenu} />
         {(showMenu && mediaMatch.mobile) ||

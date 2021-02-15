@@ -1,19 +1,25 @@
+import React from 'react'
 import styled from "styled-components";
 
-import bgpic from "assets/img/home_img/home.jpg";
+import { Image, Transformation } from 'cloudinary-react';
 
-const HomeBg = styled.div`
+const HomeBgStyle = styled(Image)`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(${bgpic});
-  background-size: cover;
-  background-attachment: fixed;
   filter: brightness(0.5);
   z-index: 0;
 `;
+
+const WINDOW_WIDTH = window.innerWidth
+
+const HomeBg = () => (
+  <HomeBgStyle publicId="v1613404170/dcproject/home_img/home_mnu4e4" secure="true">
+    <Transformation width={WINDOW_WIDTH} crop="scale" />
+  </HomeBgStyle>
+)
 
 const HomeDataContainer = styled.div`
   width: 100%;

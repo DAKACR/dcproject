@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+import { CloudinaryContext } from 'cloudinary-react';
+
 import { LanguageProvider } from "context/languagecontext";
 import { SectionsProvider } from "context/sectionscontext";
 import { ExpandedGalleryImgProvider } from "context/expandedgalleryimgcontext";
@@ -59,14 +61,16 @@ export default function App() {
             setExpandedGalleryImg,
           }}
         >
-          <HeaderSection />
-          <HomeSection getRef={homeRef} />
-          <ServicesSection getRef={servicesRef} />
-          <AboutUsSection getRef={aboutUsRef} />
-          <MostUsedPrograms getRef={mostUsedProgramsRef} />
-          <GallerySection getRef={galleryRef} />
-          <ContactSection getRef={contactRef} />
-          <FooterSection />
+          <CloudinaryContext cloudName="deudpvv78">
+            <HeaderSection />
+            <HomeSection getRef={homeRef} />
+            <ServicesSection getRef={servicesRef} />
+            <AboutUsSection getRef={aboutUsRef} />
+            <MostUsedPrograms getRef={mostUsedProgramsRef} />
+            <GallerySection getRef={galleryRef} />
+            <ContactSection getRef={contactRef} />
+            <FooterSection />
+          </CloudinaryContext>
         </ExpandedGalleryImgProvider>
       </SectionsProvider>
     </LanguageProvider>

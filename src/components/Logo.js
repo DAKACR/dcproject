@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from 'assets/img/header/logo.jpeg'
+import { Image, Transformation } from 'cloudinary-react';
 
-const LogoStyled = styled.img`
+const LogoStyled = styled(Image)`
   margin: 0;
-  width: 150px;
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;
@@ -15,6 +14,10 @@ const LogoStyled = styled.img`
   }
 `;
 
-export default function Logo({ children }) {
-  return <LogoStyled src={logo} alt="logo" />;
+export default function Logo() {
+  return (
+    <LogoStyled publicId="v1613404062/dcproject/header/logo_heh0jz" secure="true">
+      <Transformation width="150" crop="scale" />
+    </LogoStyled>
+  )
 }

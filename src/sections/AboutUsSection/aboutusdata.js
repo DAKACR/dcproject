@@ -1,4 +1,4 @@
-import how_we_work from "assets/img/about_us/how_we_work.jpg";
+const SHARE_ID = 'v1613404122/dcproject/about-us/'
 
 const ABOUT_US_DATA = {
   es: [
@@ -12,7 +12,7 @@ const ABOUT_US_DATA = {
     },
     {
       title: "Nuestro Proceso de Trabajo",
-      img: how_we_work,
+      img: SHARE_ID + 'how_we_work_hyy2hj',
     },
     {
       title: "Nuestra Meta",
@@ -30,7 +30,7 @@ const ABOUT_US_DATA = {
     },
     {
       title: "Our work process",
-      img: how_we_work,
+      img: SHARE_ID + 'how_we_work_eng_vnr5j9',
     },
     {
       title: "Our goal",
