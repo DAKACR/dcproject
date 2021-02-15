@@ -30,7 +30,11 @@ const ABOUT_US_DATA = {
     },
     {
       title: "Our work process",
+<<<<<<< HEAD
       img: SHARE_ID + 'how_we_work_eng_vnr5j9',
+=======
+      img: en_how_we_work,
+>>>>>>> 530f0b4eaec64eb07601526fdadb820de92ab455
     },
     {
       title: "Our goal",
