@@ -1,6 +1,6 @@
 const SHARED_CONTACT_DATA = [
   {
-    text: "Santiago, Región Metropolitana, Chile",
+    text: "En cualquier parte del mundo",
     icon: "map",
     important: false,
   },
