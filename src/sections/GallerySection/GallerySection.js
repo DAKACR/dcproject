@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "assets/css/carousel.css";
-import { Image } from 'cloudinary-react'
 
 import { LanguageContext } from "context/languagecontext";
 import { ExpandedGalleryImgContext } from "context/expandedgalleryimgcontext";
@@ -45,7 +44,7 @@ export default function GallerySection({ getRef }) {
         >
           {GALLERY_DATA.map((img) => (
             <div key={img} onClick={() => setExpandedGalleryImg(img)}>
-              <img src={img} alt="imagen de portafolio" />
+              <img src={img} alt="portafolio work" />
             </div>
           ))}
         </Carousel>

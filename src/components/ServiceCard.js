@@ -63,7 +63,7 @@ const Description = styled.h3`
 export default function ServiceCard({ img, title, description }) {
   return (
     <Container>
-      <StyledImage publicId={img} secure="true">
+      <StyledImage publicId={img} secure="true" alt="service image">
         <Transformation width={300} crop="scale" />
       </StyledImage>
       <Title>{title}</Title>

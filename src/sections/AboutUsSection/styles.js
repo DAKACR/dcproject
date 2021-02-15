@@ -54,7 +54,7 @@ const AboutUsImgStyled = styled(Image)`
 `;
 
 const AboutUsImg = ({ publicId }) => (
-  <AboutUsImgStyled publicId={publicId} secure="true">
+  <AboutUsImgStyled publicId={publicId} secure="true" alt="how we work image explanation">
     <Transformation width={500} crop="scale" />
   </AboutUsImgStyled>
 )

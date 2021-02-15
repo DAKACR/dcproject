@@ -16,7 +16,7 @@ const HomeBgStyle = styled(Image)`
 const WINDOW_WIDTH = window.innerWidth
 
 const HomeBg = () => (
-  <HomeBgStyle publicId="v1613404170/dcproject/home_img/home_mnu4e4" secure="true">
+  <HomeBgStyle publicId="v1613404170/dcproject/home_img/home_mnu4e4" secure="true" alt="home background image">
     <Transformation width={WINDOW_WIDTH} crop="scale" />
   </HomeBgStyle>
 )
