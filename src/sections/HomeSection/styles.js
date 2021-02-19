@@ -1,25 +1,17 @@
 import React from 'react'
 import styled from "styled-components";
 
-import { Image, Transformation } from 'cloudinary-react';
-
-const HomeBgStyle = styled(Image)`
+const HomeBg = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   filter: brightness(0.5);
+  background-image: url('https://res.cloudinary.com/deudpvv78/image/upload/c_scale,w_1440/v1613404170/dcproject/home_img/home_mnu4e4');
+  background-size: cover;
   z-index: 0;
 `;
-
-const WINDOW_WIDTH = window.innerWidth
-
-const HomeBg = () => (
-  <HomeBgStyle publicId="v1613404170/dcproject/home_img/home_mnu4e4" secure="true" alt="home background image">
-    <Transformation width={WINDOW_WIDTH} crop="scale" />
-  </HomeBgStyle>
-)
 
 const HomeDataContainer = styled.div`
   width: 100%;
@@ -68,4 +60,4 @@ const HomeSubtitle = styled.h3`
   }
 `;
 
-export { HomeBg, HomeDataContainer, HomeTitle, Hr, HomeSubtitle };
+export { HomeBg, HomeDataContainer, HomeTitle, Hr, HomeSubtitle }
