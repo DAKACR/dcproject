@@ -1,10 +1,5 @@
 const SHARED_CONTACT_DATA = [
   {
-    text: "En cualquier parte del mundo",
-    icon: "map",
-    important: false,
-  },
-  {
     text: "+56946106225",
     icon: "phone",
     important: true,
