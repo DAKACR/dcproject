@@ -10,8 +10,14 @@ const StyledLink = styled.li`
   font-family: "Roboto-Regular";
   text-transform: uppercase;
   cursor: pointer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: 0.3s border-bottom;
   &:first-of-type {
     margin-left: 0;
+  }
+  &:hover {
+    border-bottom: 1px solid #0a93ff;    
   }
 `;
 

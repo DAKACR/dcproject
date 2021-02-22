@@ -8,7 +8,8 @@ const HomeBg = styled.div`
   left: 0;
   filter: brightness(0.5);
   background-image: url('https://res.cloudinary.com/deudpvv78/image/upload/c_scale,w_1440/v1613404170/dcproject/home_img/home_mnu4e4');
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
   z-index: 0;
 `;
 
