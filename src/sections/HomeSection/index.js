@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { LanguageContext } from "context/languagecontext";
+import { useLandingTextContext } from "context/landingtextcontext";
 
 import Layout from "components/Layout";
 import Button from "components/Button";
@@ -13,18 +11,16 @@ import {
   HomeSubtitle,
 } from "./styles";
 
-import HOME_DATA from "./homedata";
-
 export default function HomeSection() {
-  const { lang } = useContext(LanguageContext);
-
+  const text = useLandingTextContext();
+  console.log(text);
   return (
     <Layout id="home" section="home" background={<HomeBg />}>
       <HomeDataContainer>
-        <HomeTitle>{HOME_DATA[lang].title}</HomeTitle>
+        <HomeTitle>{text.homeTitle}</HomeTitle>
         <Hr />
-        <HomeSubtitle>{HOME_DATA[lang].subtitle}</HomeSubtitle>
-        <Button text={HOME_DATA[lang].button} section="home" />
+        <HomeSubtitle>{text.homeParagraph}</HomeSubtitle>
+        <Button text={text.homeCta} section="home" />
       </HomeDataContainer>
     </Layout>
   );
