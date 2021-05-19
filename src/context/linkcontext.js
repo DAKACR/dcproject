@@ -1,56 +1,56 @@
-import React from "react";
+import { createContext } from "react";
 
-export const LinksDataContext = React.createContext({
+export const LinksDataContext = createContext({
   es: [
     {
       text: "inicio",
-      section: "homeRef",
+      href: "home",
     },
     {
       text: "servicios",
-      section: "servicesRef",
+      href: "services",
     },
     {
       text: "sobre nosotros",
-      section: "aboutUsRef",
+      href: "about-us",
     },
     {
       text: "programas más utilizados",
-      section: "mostUsedProgramsRef",
+      href: "programs",
     },
     {
       text: "galería",
-      section: "galleryRef",
+      href: "gallery",
     },
     {
       text: "contacto",
-      section: "contactRef",
+      href: "contact",
     },
   ],
   en: [
     {
       text: "home",
-      section: "homeRef",
+      href: "home",
     },
     {
       text: "services",
-      section: "servicesRef",
+      href: "services",
     },
     {
       text: "about us",
-      section: "aboutUsRef",
+      href: "about-us",
     },
     {
       text: "softwares",
-      section: "mostUsedProgramsRef",
+      href: "programs",
     },
     {
       text: "gallery",
-      section: "galleryRef",
+      href: "gallery",
     },
     {
       text: "contact",
-      section: "contactRef",
+      href: "contact",
     },
   ],
 });

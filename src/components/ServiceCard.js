@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-import { Image, Transformation } from 'cloudinary-react';
+import { Image, Transformation } from "cloudinary-react";
 
 const Container = styled.div`
   width: 100%;
@@ -15,20 +14,21 @@ const Container = styled.div`
   position: relative;
   border-radius: 7px;
   overflow: hidden;
-  transition: 0.5s all;
-  cursor: pointer;
-  margin-left: 3rem;
   margin-top: 2rem;
-  &:first-of-type {
-    margin-left: 0;
-  }
-  &:hover {
-    box-shadow: 0px 33px 33px -16px #00000021;
+  @media (min-width: 640px) {
+    &:nth-child(even) {
+      margin-left: 3rem;
+    }
   }
   @media (max-width: 640px) {
     height: 280px;
-    margin-left: 0;
     margin-top: 1rem;
+  }
+  @media (min-width: 1025px) {
+    margin-left: 3rem;
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 `;
 const StyledImage = styled(Image)`

@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledLink = styled.li`
-  color: #fff;
   font-size: 12px;
   margin-left: 1.5rem;
   font-weight: 600;
@@ -13,19 +11,37 @@ const StyledLink = styled.li`
   padding-top: 1rem;
   padding-bottom: 1rem;
   transition: 0.3s border-bottom;
+  position: relative;
   &:first-of-type {
     margin-left: 0;
+    margin-top: 0;
   }
   &:hover {
-    border-bottom: 1px solid #0a93ff;    
+    &::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: #0a93ff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 `;
 
-export default function Link({ text, section, handleMenu }) {
+const StyledA = styled.a`
+  text-decoration: none;
+  color: #fff;
+`;
+
+export default function Link({ href, text, handleMenu }) {
   const handleScrollTo = () => {
-    section.current.scrollIntoView({ behavior: "smooth", block: "center" });
     if (!!handleMenu) handleMenu(false);
   };
 
-  return <StyledLink onClick={handleScrollTo}>{text}</StyledLink>;
+  return (
+    <StyledLink onClick={handleScrollTo}>
+      <StyledA href={`#${href}`}>{text}</StyledA>
+    </StyledLink>
+  );
 }

@@ -1,7 +1,4 @@
-import React, { useContext } from "react";
 import styled, { css } from "styled-components";
-
-import { SectionsContext } from "context/sectionscontext";
 
 const StyledButton = styled.button`
   background: #0476d0;
@@ -11,12 +8,12 @@ const StyledButton = styled.button`
   border-radius: 5px;
   font-size: 14px;
   font-family: "Roboto-Regular";
-  transition: 0.2s transform;
+  transition: 0.3s transform;
   text-transform: uppercase;
   &:hover {
     cursor: pointer;
     transform: translateY(-7px);
-    box-shadow: 0px 3px 20px 7px #0a93ff;
+    box-shadow: 0px 16px 30px -7px #0a93ff;
     font-weight: 900;
   }
 
@@ -43,21 +40,8 @@ const StyledButton = styled.button`
 `;
 
 export default function Button({ text, section }) {
-  const sectionsRef = useContext(SectionsContext);
-
-  const moveToContact = () => {
-    sectionsRef.contactRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  };
-
   if (section === "home") {
-    return (
-      <StyledButton section={section} onClick={moveToContact}>
-        {text}
-      </StyledButton>
-    );
+    return <StyledButton section={section}>{text}</StyledButton>;
   } else {
     return (
       <StyledButton type="submit" section={section}>

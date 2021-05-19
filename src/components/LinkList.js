@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 import { LinksDataContext } from "context/linkcontext";
 import { LanguageContext } from "context/languagecontext";
-import { SectionsContext } from "context/sectionscontext";
 
 import Link from "components/Link";
 
@@ -83,28 +82,45 @@ const CloseMenu = styled.div`
   fill: #fff;
   font-family: "Roboto-Bold";
   font-size: 40px;
+  cursor: pointer;
   @media (max-width: 1024px) {
     display: block;
   }
 `;
 
-export default function LinkList({ section, handleMenu }) {
+export default function LinkList({ section, showMenu, handleMenu }) {
+  const [isDesktop, setIsDesktop] = useState(true);
   const LINKS = useContext(LinksDataContext);
   const { lang } = useContext(LanguageContext);
-  const sectionsRef = useContext(SectionsContext);
+
+  useEffect(() => {
+    const showNavBarOnDesktop = () => {
+      const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+
+      if (isDesktop) {
+        setIsDesktop(true);
+      } else {
+        setIsDesktop(false);
+      }
+    };
+    showNavBarOnDesktop();
+
+    window.addEventListener("resize", showNavBarOnDesktop);
+
+    return () => {
+      window.removeEventListener("resize", showNavBarOnDesktop);
+    };
+  });
+
+  if (!showMenu && section === "header" && isDesktop === false) return null;
 
   return (
     <StyledLinkList section={section}>
-      <CloseMenu role="button" onClick={() => handleMenu(false, "footer")}>
+      <CloseMenu role="button" onClick={() => handleMenu(false)}>
         &times;
       </CloseMenu>
-      {LINKS[lang].map(({ text, section }) => (
-        <Link
-          key={text}
-          text={text}
-          section={sectionsRef[section]}
-          handleMenu={handleMenu}
-        />
+      {LINKS[lang].map(({ href, text }) => (
+        <Link key={text} href={href} text={text} handleMenu={handleMenu} />
       ))}
     </StyledLinkList>
   );

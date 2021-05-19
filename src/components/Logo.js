@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-import { Image, Transformation } from 'cloudinary-react';
+import { Image, Transformation } from "cloudinary-react";
 
 const LogoStyled = styled(Image)`
   margin: 0;
@@ -16,8 +15,12 @@ const LogoStyled = styled(Image)`
 
 export default function Logo() {
   return (
-    <LogoStyled publicId="v1613404062/dcproject/header/logo_heh0jz" secure="true" alt="logo">
+    <LogoStyled
+      publicId="v1613404062/dcproject/header/logo_heh0jz"
+      secure="true"
+      alt="logo"
+    >
       <Transformation width="150" crop="scale" />
     </LogoStyled>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { css } from "styled-components";
 
 const MarginBetweenSection = css`
@@ -108,9 +107,9 @@ const InnerContainer = styled.div`
   }}
 `;
 
-export default function Layout({ section, background, getRef, children }) {
+export default function Layout({ id, section, background, children }) {
   return (
-    <Container section={section} ref={getRef}>
+    <Container id={id} section={section}>
       {background && <background.type />}
       <InnerContainer section={section}>{children}</InnerContainer>
     </Container>
