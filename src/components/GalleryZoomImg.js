@@ -46,10 +46,10 @@ const CloseMenu = styled.div`
   cursor: pointer;
 `;
 
-export default function ExpandImgGallery({ img, clearExpandedImg }) {
+export default function GalleryZoomImg({ img, clearGalleryZoom }) {
   return (
     <ImgBackground>
-      <CloseMenu role="button" onClick={() => clearExpandedImg("")}>
+      <CloseMenu role="button" onClick={() => clearGalleryZoom("")}>
         &times;
       </CloseMenu>
       <img src={img} alt="imagen de galería aumentada" />

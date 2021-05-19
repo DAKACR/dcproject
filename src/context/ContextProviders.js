@@ -1,39 +1,35 @@
 import { useState } from "react";
 
-import { CloudinaryContext } from "cloudinary-react";
-
-import { LandingTextProvider } from "./landingtextcontext";
+import { LandingDataProvider } from "./landingdatacontext";
 import { LanguageProvider } from "./languagecontext";
-import { ExpandedGalleryImgProvider } from "./expandedgalleryimgcontext";
+import { GalleryZoomContextProvider } from "./galleryzoomcontext";
 
 import useContentful from "hooks/useContentful";
 
 const ContextProviders = ({ children }) => {
   const [lang, setLang] = useState("es");
-  const [expandedGalleryImg, setExpandedGalleryImg] = useState(false);
+  const [galleryZoom, setGalleryZoom] = useState(false);
 
-  const { text } = useContentful();
+  const landingData = useContentful();
 
   return (
-    <LanguageProvider
-      value={{
-        lang,
-        setLang,
-      }}
-    >
-      <ExpandedGalleryImgProvider
+    <LandingDataProvider value={landingData.data}>
+      <LanguageProvider
         value={{
-          expandedGalleryImg,
-          setExpandedGalleryImg,
+          lang,
+          setLang,
         }}
       >
-        <LandingTextProvider value={text}>
-          <CloudinaryContext cloudName="deudpvv78">
-            {children}
-          </CloudinaryContext>
-        </LandingTextProvider>
-      </ExpandedGalleryImgProvider>
-    </LanguageProvider>
+        <GalleryZoomContextProvider
+          value={{
+            galleryZoom,
+            setGalleryZoom,
+          }}
+        >
+          {children}
+        </GalleryZoomContextProvider>
+      </LanguageProvider>
+    </LandingDataProvider>
   );
 };
 

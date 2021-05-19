@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { LanguageContext } from "context/languagecontext";
+import { useLandingDataContext } from "context/landingdatacontext";
 
 import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
@@ -13,16 +11,14 @@ import {
   AboutUsImg,
 } from "./styles";
 
-import ABOUT_US_DATA from "./aboutusdata";
-
 export default function AboutUsSection() {
-  const { lang } = useContext(LanguageContext);
+  const landingData = useLandingDataContext();
 
   return (
     <Layout id="about-us" section="about-us">
       <AboutUsContainer>
-        <SectionTitle title={lang === "es" ? "sobre nosotros" : "about us"} />
-        {ABOUT_US_DATA[lang].map(({ title, paragraph, img }) => (
+        <SectionTitle title={"about us"} />
+        {/* {.map(({ title, paragraph, img }) => (
           <AboutUsDataContainer key={title}>
             <AboutUsDataTitle>{title}</AboutUsDataTitle>
             {paragraph ? (
@@ -31,7 +27,7 @@ export default function AboutUsSection() {
               <AboutUsImg publicId={img} />
             )}
           </AboutUsDataContainer>
-        ))}
+        ))} */}
       </AboutUsContainer>
     </Layout>
   );

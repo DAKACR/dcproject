@@ -1,6 +1,4 @@
-import { createContext } from "react";
-
-export const LinksDataContext = createContext({
+const navLinks = {
   es: [
     {
       text: "inicio",
@@ -53,6 +51,6 @@ export const LinksDataContext = createContext({
       href: "contact",
     },
   ],
-});
+};
 
-export const LinksDataProvider = LinksDataContext.Provider;
+export default navLinks

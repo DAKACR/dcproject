@@ -1,4 +1,4 @@
-import { useLandingTextContext } from "context/landingtextcontext";
+import { useLandingDataContext } from "context/landingdatacontext";
 
 import Layout from "components/Layout";
 import Button from "components/Button";
@@ -12,15 +12,15 @@ import {
 } from "./styles";
 
 export default function HomeSection() {
-  const text = useLandingTextContext();
-  console.log(text);
+  const landingData = useLandingDataContext();
+
   return (
     <Layout id="home" section="home" background={<HomeBg />}>
       <HomeDataContainer>
-        <HomeTitle>{text.homeTitle}</HomeTitle>
+        <HomeTitle>{landingData.homeTitle}</HomeTitle>
         <Hr />
-        <HomeSubtitle>{text.homeParagraph}</HomeSubtitle>
-        <Button text={text.homeCta} section="home" />
+        <HomeSubtitle>{landingData.homeParagraph}</HomeSubtitle>
+        <Button text={landingData.homeCta} section="home" />
       </HomeDataContainer>
     </Layout>
   );

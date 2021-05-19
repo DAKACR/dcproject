@@ -13,7 +13,7 @@ const query = `
 `;
 
 const useContentful = () => {
-  const [text, setText] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     window
@@ -34,12 +34,12 @@ const useContentful = () => {
           console.error(errors);
         }
 
-        setText(data.landingCollection.items[0]);
+        setData(data.landingCollection.items[0]);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  return { text };
+  return { data };
 };
 
 export default useContentful;

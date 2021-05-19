@@ -1,6 +1,5 @@
-import { useContext } from "react";
-
-import { LanguageContext } from "context/languagecontext";
+import { useLandingDataContext } from "context/landingdatacontext";
+import { useLanguageContext } from "context/languagecontext";
 
 import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
@@ -15,23 +14,24 @@ import {
   StyledTextarea,
 } from "./styles";
 
-import { CONTACT_DATA, FORM_INFO } from "./contactdata";
+import { FORM_INFO } from "./contactdata";
 
 export default function ContactSection() {
-  const { lang } = useContext(LanguageContext);
+  const landingData = useLandingDataContext();
+  const { lang } = useLanguageContext();
 
   return (
     <Layout id="contact" section="contact">
-      <SectionTitle title={lang === "es" ? "contacto" : "contact"} />
+      <SectionTitle title={"contact"} />
       <ContactDataContainer>
-        {CONTACT_DATA[lang].map(({ icon, text, important }) => (
+        {/* {.map(({ icon, text, important }) => (
           <ContactData
             key={text}
             icon={icon}
             text={text}
             important={important}
           />
-        ))}
+        ))} */}
       </ContactDataContainer>
       <StyledForm
         name="contact"

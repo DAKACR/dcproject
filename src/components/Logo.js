@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import { Image, Transformation } from "cloudinary-react";
-
-const LogoStyled = styled(Image)`
+const LogoStyled = styled.img`
   margin: 0;
   &:hover {
     filter: brightness(0.9);
@@ -17,12 +15,9 @@ export default function Logo() {
   return (
     <a href="#home">
       <LogoStyled
-        publicId="v1613404062/dcproject/header/logo_heh0jz"
-        secure="true"
+        src=""
         alt="logo"
-      >
-        <Transformation width="150" crop="scale" />
-      </LogoStyled>
+      />
     </a>
   );
 }
