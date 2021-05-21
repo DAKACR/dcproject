@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { Image, Transformation } from "cloudinary-react";
-
 const Container = styled.div`
   width: 100%;
   max-width: 300px;
@@ -31,7 +29,7 @@ const Container = styled.div`
     }
   }
 `;
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 10rem;
@@ -60,12 +58,14 @@ const Description = styled.h3`
   z-index: 1;
 `;
 
-export default function ServiceCard({ img, title, description }) {
+export default function ServiceCard({ imgData, title, description }) {
   return (
     <Container>
-      <StyledImage publicId={img} secure="true" alt="service image">
-        <Transformation width={300} crop="scale" />
-      </StyledImage>
+      <StyledImage
+        src={imgData.url}
+        secure="true"
+        alt={imgData.title}
+      ></StyledImage>
       <Title>{title}</Title>
       <Description>{description}</Description>
     </Container>

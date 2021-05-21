@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
 const BurguerMenuStyles = styled.div`
+  display: block;
   width: 35px;
   height: 30px;
-  display: none;
   cursor: pointer;
-  @media (max-width: 1024px) {
-    display: block;
-  }
 `;
 
 export default function BurguerMenu({ handleMenu }) {

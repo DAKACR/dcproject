@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const StyledLink = styled.li`
+  display: flex;
+  align-items: center;
   font-size: 12px;
   margin-left: 1.5rem;
   font-weight: 600;

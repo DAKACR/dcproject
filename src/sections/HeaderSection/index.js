@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-import { useLanguageContext } from "context/languagecontext";
-import { useGalleryZoomContext } from "context/galleryzoomcontext";
-
 import Layout from "components/Layout";
 import Logo from "components/Logo";
 import ContactButton from "components/ContactButton";
@@ -11,11 +8,12 @@ import LinkList from "components/LinkList";
 import MobileLinkList from "components/MobileLinkList";
 import LanguageButton from "components/LanguageButton";
 
+import { useLanguageContext } from "context/languagecontext";
+import { useGalleryZoomContext } from "context/galleryzoomcontext";
+
 import useIsDesktop from "hooks/useIsDesktop";
 
 import { RightSideContainer } from "./styles";
-
-const BODY = document.querySelector("body");
 
 export default function HeaderSection() {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,6 +22,8 @@ export default function HeaderSection() {
   const isDesktop = useIsDesktop();
 
   const handleMenu = (show) => {
+    const BODY = document.querySelector("body");
+
     if (show) {
       BODY.style.overflowY = "hidden";
     } else {
@@ -37,11 +37,13 @@ export default function HeaderSection() {
     <Layout section="header">
       <Logo />
       <RightSideContainer>
-        <BurguerMenu handleMenu={handleMenu} />
         {isDesktop ? (
           <LinkList />
         ) : (
-          <MobileLinkList showMenu={showMenu} handleMenu={handleMenu} />
+          <>
+            <MobileLinkList showMenu={showMenu} handleMenu={handleMenu} />
+            <BurguerMenu handleMenu={handleMenu} />
+          </>
         )}
         <ContactButton />
         <LanguageButton lang={lang} setLang={setLang} />

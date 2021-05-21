@@ -13,14 +13,16 @@ import {
 
 export default function HomeSection() {
   const landingData = useLandingDataContext();
+  const homeData = landingData?.homeCollection.items[0];
 
   return (
-    <Layout id="home" section="home" background={<HomeBg />}>
+    <Layout id="home" section="home">
+      <HomeBg background={homeData?.background.url} />
       <HomeDataContainer>
-        <HomeTitle>{landingData.homeTitle}</HomeTitle>
+        <HomeTitle>{homeData?.title}</HomeTitle>
         <Hr />
-        <HomeSubtitle>{landingData.homeParagraph}</HomeSubtitle>
-        <Button text={landingData.homeCta} section="home" />
+        <HomeSubtitle>{homeData?.subtitle}</HomeSubtitle>
+        <Button text={homeData?.cta} section="home" />
       </HomeDataContainer>
     </Layout>
   );

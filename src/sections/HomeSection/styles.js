@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
-const HomeBg = styled.div`
+const Background = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   filter: brightness(0.5);
-  background-image: url("https://res.cloudinary.com/deudpvv78/image/upload/c_scale,w_1440/v1613404170/dcproject/home_img/home_mnu4e4");
+  background: #000;
+  background-image: url("${(props) => props.background}");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
 `;
+
+const HomeBg = ({ background }) => <Background background={background} />;
 
 const HomeDataContainer = styled.div`
   width: 100%;

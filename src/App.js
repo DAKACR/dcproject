@@ -1,5 +1,3 @@
-import ContextProviders from "context/ContextProviders";
-
 import HeaderSection from "sections/HeaderSection";
 import HomeSection from "sections/HomeSection";
 import ServicesSection from "sections/ServicesSection";
@@ -10,6 +8,8 @@ import ContactSection from "sections/ContactSection";
 import FooterSection from "sections/FooterSection";
 
 import IconsSetup from "components/IconsSetup";
+
+import ContextProviders from "context/ContextProviders";
 
 export default function App() {
   return (

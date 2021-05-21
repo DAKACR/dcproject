@@ -1,19 +1,55 @@
 import { useState, useEffect } from "react";
 
-const query = `
+const query = (lang) => `
 {
-  landingCollection(locale: "en-US") {
+  headerLogoCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
     items {
-      homeTitle
-      homeParagraph
-      homeCta
+      img {
+        url
+        title
+      }
+    }
+  }
+  homeCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+    items {
+      title
+      subtitle
+      cta
+      background {
+        url
+      }
+    }
+  }
+  servicesCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+    items {
+      img {
+        url
+        title
+      }
+      title
+      description
+    }
+  }
+  aboutCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+    items {
+      title
+      paragraph
+      img {
+        url
+        title
+      }
+    }
+  }
+  softwaresCollection {
+    items {
+      list
     }
   }
 }
 `;
 
-const useContentful = () => {
-  const [data, setData] = useState({});
+const useContentful = (lang) => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     window
@@ -25,7 +61,7 @@ const useContentful = () => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
           },
-          body: JSON.stringify({ query }),
+          body: JSON.stringify({ query: query(lang) }),
         }
       )
       .then((response) => response.json())
@@ -34,10 +70,12 @@ const useContentful = () => {
           console.error(errors);
         }
 
-        setData(data.landingCollection.items[0]);
+        setData(data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [lang]);
+
+  console.log(data);
 
   return { data };
 };

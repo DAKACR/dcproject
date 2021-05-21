@@ -10,7 +10,7 @@ const ContextProviders = ({ children }) => {
   const [lang, setLang] = useState("es");
   const [galleryZoom, setGalleryZoom] = useState(false);
 
-  const landingData = useContentful();
+  const landingData = useContentful(lang);
 
   return (
     <LandingDataProvider value={landingData.data}>
