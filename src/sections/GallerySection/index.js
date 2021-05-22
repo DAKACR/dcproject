@@ -12,6 +12,8 @@ import useDontScrollOnZoom from "hooks/useDontScrollOnZoom";
 
 export default function GallerySection() {
   const landingData = useLandingDataContext();
+  const galleryPictures =
+    landingData?.galleryCollection.items[0].imagesCollection.items;
   const { galleryZoom, setGalleryZoom } = useGalleryZoomContext();
   useDontScrollOnZoom(galleryZoom);
 
@@ -21,7 +23,7 @@ export default function GallerySection() {
       {!!galleryZoom && (
         <GalleryZoomImg img={galleryZoom} clearGalleryZoom={setGalleryZoom} />
       )}
-      {/* <div className="carousel-wrapper">
+      <div className="carousel-wrapper">
         <Carousel
           infiniteLoop
           useKeyboardArrows
@@ -29,13 +31,15 @@ export default function GallerySection() {
           showIndicators={false}
           showStatus={false}
         >
-          {.map((img) => (
-            <div key={img} onClick={() => setGalleryZoom(img)}>
-              <img src={img} alt="portafolio work" />
-            </div>
-          ))}
+          {galleryPictures
+            ? galleryPictures.map(({ url }) => (
+                <div key={url} onClick={() => setGalleryZoom(url)}>
+                  <img src={url} alt="portafolio work" />
+                </div>
+              ))
+            : null}
         </Carousel>
-      </div> */}
+      </div>
     </Layout>
   );
 }

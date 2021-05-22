@@ -45,6 +45,15 @@ const query = (lang) => `
       list
     }
   }
+  galleryCollection {
+    items {
+      imagesCollection {
+        items {
+          url
+        }
+      }
+    }
+  }
 }
 `;
 
