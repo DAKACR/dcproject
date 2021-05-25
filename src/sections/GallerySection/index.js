@@ -3,6 +3,7 @@ import "assets/css/carousel.css";
 
 import useContentful from "hooks/useContentful";
 import { useGalleryZoomContext } from "context/galleryzoomcontext";
+import { useLanguageContext } from "context/languagecontext";
 
 import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
@@ -27,6 +28,7 @@ const query = (lang) => {
 };
 
 export default function GallerySection() {
+  const { lang } = useLanguageContext();
   const landingData = useContentful({ query });
   const galleryPictures =
     landingData?.galleryCollection.items[0].imagesCollection.items;
@@ -35,7 +37,7 @@ export default function GallerySection() {
 
   return (
     <Layout id="gallery" section="gallery">
-      <SectionTitle title={"gallery"} />
+      <SectionTitle title={lang === "es" ? "galería" : "gallery"} />
       {!!galleryZoom && (
         <GalleryZoomImg img={galleryZoom} clearGalleryZoom={setGalleryZoom} />
       )}

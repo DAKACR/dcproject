@@ -30,10 +30,9 @@ const useContentful = ({ query }) => {
         if (errors) {
           console.error(errors);
         }
-        console.log(data);
+
         if (query.constructor === Function) {
           if (dataLanding[lang] === null) {
-            console.log({ [lang]: data });
             setLandingData((prevData) => ({ ...prevData, [lang]: data }));
           }
         } else {
@@ -45,7 +44,6 @@ const useContentful = ({ query }) => {
       .catch((err) => console.log(err));
   }, [queryParam, lang, query.constructor, dataLanding]);
 
-  console.log(dataLanding);
   if (query.constructor === Function) {
     return dataLanding[lang];
   } else {

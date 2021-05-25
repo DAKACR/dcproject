@@ -4,6 +4,8 @@ import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
 import ServiceCard from "components/ServiceCard";
 
+import { useLanguageContext } from "context/languagecontext";
+
 import { ServicesContainer } from "./styles";
 
 const query = (lang) => {
@@ -23,12 +25,13 @@ const query = (lang) => {
 };
 
 export default function ServicesSection() {
+  const { lang } = useLanguageContext();
   const landingData = useContentful({ query });
   const servicesData = landingData?.servicesCollection.items;
 
   return (
     <Layout id="services" section="services">
-      <SectionTitle title={"services"} />
+      <SectionTitle title={lang === "es" ? "servicios" : "services"} />
       <ServicesContainer>
         {servicesData
           ? servicesData.map(({ img, title, description }) => (

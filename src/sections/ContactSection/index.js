@@ -37,7 +37,7 @@ export default function ContactSection() {
 
   return (
     <Layout id="contact" section="contact">
-      <SectionTitle title={"contact"} />
+      <SectionTitle title={lang === "es" ? "contacto" : "contact"} />
       <ContactDataContainer>
         {contactData
           ? contactData.map(({ text, icon, important }) => (
