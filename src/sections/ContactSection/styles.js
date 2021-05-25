@@ -24,7 +24,7 @@ const formControl = css`
 
 const ContactDataContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-bottom: 1rem;
 `;
 

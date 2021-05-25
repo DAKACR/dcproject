@@ -43,7 +43,7 @@ const StylelLinkMobile = styled.div`
 `;
 
 const CloseMenu = styled.div`
-  display: none;
+  display: block;
   position: absolute;
   top: 20px;
   right: 30px;
@@ -51,9 +51,6 @@ const CloseMenu = styled.div`
   font-family: "Roboto-Bold";
   font-size: 40px;
   cursor: pointer;
-  @media (max-width: 1024px) {
-    display: block;
-  }
 `;
 
 const MobileLinkList = ({ showMenu, handleMenu }) => {
