@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 
 const LogoStyled = styled.img`
   width: 150px;
@@ -14,8 +14,21 @@ const LogoStyled = styled.img`
   }
 `;
 
+const query = `
+  {
+    headerLogoCollection {
+      items {
+        img {
+          url
+          title
+        }
+      }
+    }
+  }
+`;
+
 export default function Logo() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
   const logo = landingData?.headerLogoCollection.items[0].img;
 
   return (

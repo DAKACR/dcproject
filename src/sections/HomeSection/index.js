@@ -1,4 +1,4 @@
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 
 import Layout from "components/Layout";
 import Button from "components/Button";
@@ -11,8 +11,24 @@ import {
   HomeSubtitle,
 } from "./styles";
 
+const query = (lang) => {
+  return `
+  {
+    homeCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+      items {
+        title
+        subtitle
+        cta
+        background {
+          url
+        }
+      }
+    }
+  }`;
+};
+
 export default function HomeSection() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
   const homeData = landingData?.homeCollection.items[0];
 
   return (

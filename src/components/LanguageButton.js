@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import styled from "styled-components";
 
+import { useLanguageContext } from "context/languagecontext";
+
 const StyledButton = styled.button`
   width: 40px;
   height: 30px;
@@ -26,8 +28,9 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function LanguageButton({ lang, setLang }) {
+export default function LanguageButton() {
   const btnRef = useRef(null);
+  const { lang, setLang } = useLanguageContext();
 
   const handleLanguage = () => {
     if (lang === "es") {

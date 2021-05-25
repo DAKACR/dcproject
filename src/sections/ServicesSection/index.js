@@ -1,4 +1,4 @@
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 
 import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
@@ -6,8 +6,24 @@ import ServiceCard from "components/ServiceCard";
 
 import { ServicesContainer } from "./styles";
 
+const query = (lang) => {
+  return `
+  {
+    servicesCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+      items {
+        img {
+          url
+          title
+        }
+        title
+        description
+      }
+    }
+  }`;
+};
+
 export default function ServicesSection() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
   const servicesData = landingData?.servicesCollection.items;
 
   return (

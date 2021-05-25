@@ -8,7 +8,6 @@ import LinkList from "components/LinkList";
 import MobileLinkList from "components/MobileLinkList";
 import LanguageButton from "components/LanguageButton";
 
-import { useLanguageContext } from "context/languagecontext";
 import { useGalleryZoomContext } from "context/galleryzoomcontext";
 
 import useIsDesktop from "hooks/useIsDesktop";
@@ -17,7 +16,6 @@ import { RightSideContainer } from "./styles";
 
 export default function HeaderSection() {
   const [showMenu, setShowMenu] = useState(false);
-  const { lang, setLang } = useLanguageContext();
   const { setGalleryZoom } = useGalleryZoomContext();
   const isDesktop = useIsDesktop();
 
@@ -46,7 +44,7 @@ export default function HeaderSection() {
           </>
         )}
         <ContactButton />
-        <LanguageButton lang={lang} setLang={setLang} />
+        <LanguageButton />
       </RightSideContainer>
     </Layout>
   );

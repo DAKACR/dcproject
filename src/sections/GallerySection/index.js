@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "assets/css/carousel.css";
 
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 import { useGalleryZoomContext } from "context/galleryzoomcontext";
 
 import Layout from "components/Layout";
@@ -10,8 +10,24 @@ import GalleryZoomImg from "components/GalleryZoomImg";
 
 import useDontScrollOnZoom from "hooks/useDontScrollOnZoom";
 
+const query = (lang) => {
+  return `
+    {
+      galleryCollection {
+        items {
+          imagesCollection {
+            items {
+              url
+            }
+          }
+        }
+      }
+    }
+  `;
+};
+
 export default function GallerySection() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
   const galleryPictures =
     landingData?.galleryCollection.items[0].imagesCollection.items;
   const { galleryZoom, setGalleryZoom } = useGalleryZoomContext();

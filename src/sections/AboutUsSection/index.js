@@ -1,4 +1,4 @@
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 
 import Layout from "components/Layout";
 import SectionTitle from "components/SectionTitle";
@@ -11,8 +11,25 @@ import {
   AboutUsImg,
 } from "./styles";
 
+const query = (lang) => {
+  return `
+    {
+      aboutCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+        items {
+          title
+          paragraph
+          img {
+            url
+            title
+          }
+        }
+      }
+    }
+  `;
+};
+
 export default function AboutUsSection() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
   const aboutData = landingData?.aboutCollection.items;
 
   return (

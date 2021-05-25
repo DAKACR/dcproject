@@ -1,4 +1,4 @@
-import { useLandingDataContext } from "context/landingdatacontext";
+import useContentful from "hooks/useContentful";
 import { useLanguageContext } from "context/languagecontext";
 
 import Layout from "components/Layout";
@@ -16,22 +16,39 @@ import {
 
 import { FORM_INFO } from "./contactdata";
 
+const query = (lang) => {
+  return `
+  {
+    contactCollection(locale: "${lang === "es" ? "es" : "en-US"}") {
+      items {
+        text
+        icon
+        important
+      }
+    }
+  }
+  `;
+};
+
 export default function ContactSection() {
-  const landingData = useLandingDataContext();
+  const landingData = useContentful({ query });
+  const contactData = landingData?.contactCollection.items;
   const { lang } = useLanguageContext();
 
   return (
     <Layout id="contact" section="contact">
       <SectionTitle title={"contact"} />
       <ContactDataContainer>
-        {/* {.map(({ icon, text, important }) => (
-          <ContactData
-            key={text}
-            icon={icon}
-            text={text}
-            important={important}
-          />
-        ))} */}
+        {contactData
+          ? contactData.map(({ text, icon, important }) => (
+              <ContactData
+                key={text}
+                icon={icon}
+                text={text}
+                important={important}
+              />
+            ))
+          : null}
       </ContactDataContainer>
       <StyledForm
         name="contact"
