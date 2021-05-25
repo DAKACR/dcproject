@@ -43,7 +43,7 @@ const useContentful = ({ query }) => {
         }
       })
       .catch((err) => console.log(err));
-  }, [queryParam, lang, query.constructor]);
+  }, [queryParam, lang, query.constructor, dataLanding]);
 
   console.log(dataLanding);
   if (query.constructor === Function) {
